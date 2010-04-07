@@ -50,6 +50,11 @@ brauchbar is built on top of the [patron](http://github.com/toland/patron) gem, 
 
 Feel free to hack away at this, however I won't merge anything unless you have adequate tests for it! Once you have done, send a pull request.
 
+## Todo / What would be nice
+
+* POST requests with POST data
+* Remembering of cookies between requests
+
 ## Contributors
 
 * [Luca Spiller](http://github.com/lucaspiller/)
