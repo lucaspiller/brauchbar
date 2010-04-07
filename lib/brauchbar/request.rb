@@ -1,0 +1,3 @@
+class Brauchbar::Request
+
+end
