@@ -1,5 +1,8 @@
 require 'uri'
 
+require 'rubygems'
+require 'patron'
+
 class Brauchbar
   autoload :Request, 'brauchbar/request'
 

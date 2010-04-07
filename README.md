@@ -13,15 +13,21 @@ The majority of other clients are built on top off Net::HTTP. This is the HTTP l
 
 ### So, this is special how?
 
-brauchbar is built on top of the [httpclient](http://github.com/nahi/httpclient) gem, which itself is based upon libwww-perl. In other words, it has history. History is good. The brauchbar interface is based upon a number of other good, it is designed to be simple and easy to integrate.
+brauchbar is built on top of the [patron](http://github.com/toland/patron) gem, which itself is based upon libcurl. In other words, it has history. History is good. The brauchbar interface is based upon a number of other good, it is designed to be simple and easy to integrate.
 
 ## Install
 
-> gem install brauchbar
+   gem install brauchbar
 
 ## Usage
 
-TODO
+### Basic Usage
+
+   Brauchbar.get "http://www.google.co.uk/search?hl=en&q=brauchbar&meta=&esrch=FT1"
+
+### Headers
+
+   Brauchbar.get "http://www.google.co.uk/search?hl=en&q=brauchbar&meta=&esrch=FT1", :headers => { 'Accept' => 'text/html', 'User-Agent' => 'brauchbar test 1.0' }
 
 ## Hacking
 
