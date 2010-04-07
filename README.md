@@ -17,17 +17,17 @@ brauchbar is built on top of the [patron](http://github.com/toland/patron) gem, 
 
 ## Install
 
-   gem install brauchbar
+    gem install brauchbar
 
 ## Usage
 
 ### Basic Usage
 
-   Brauchbar.get "http://www.google.co.uk/search?hl=en&q=brauchbar&meta=&esrch=FT1"
+    Brauchbar.get "http://www.google.co.uk/search?hl=en&q=brauchbar&meta=&esrch=FT1"
 
 ### Headers
 
-   Brauchbar.get "http://www.google.co.uk/search?hl=en&q=brauchbar&meta=&esrch=FT1", :headers => { 'Accept' => 'text/html', 'User-Agent' => 'brauchbar test 1.0' }
+    Brauchbar.get "http://www.google.co.uk/search?hl=en&q=brauchbar&meta=&esrch=FT1", :headers => { 'Accept' => 'text/html', 'User-Agent' => 'brauchbar test 1.0' }
 
 ## Hacking
 
