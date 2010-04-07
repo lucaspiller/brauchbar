@@ -1,3 +1,5 @@
+require 'uri'
+
 class Brauchbar
   autoload :Request, 'brauchbar/request'
 
