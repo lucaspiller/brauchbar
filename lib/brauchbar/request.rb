@@ -18,6 +18,9 @@ class Brauchbar::Request
     session = Patron::Session.new
 
     # make request
-    session.request(params[:method], params[:uri], params[:headers])
+    response = session.request(params[:method], params[:uri], params[:headers])
+
+    # create brauchbar response object
+    Brauchbar::Response.new response
   end
 end

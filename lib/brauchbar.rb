@@ -5,6 +5,7 @@ require 'patron'
 
 class Brauchbar
   autoload :Request, 'brauchbar/request'
+  autoload :Response, 'brauchbar/response'
 
   def self.get(uri, params = {})
     options = {

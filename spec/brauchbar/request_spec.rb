@@ -3,8 +3,11 @@ require 'spec_helper'
 describe Brauchbar::Request do
   describe '#execute' do
     before(:each) do
+      @brauchbar_response = mock('BrauchbarResponse')
+      Brauchbar::Response.stub!(:new).and_return(@brauchbar_response)
+      @response = mock('PatronResponse')
       @session = mock('PatronSession')
-      @session.stub!(:request)
+      @session.stub!(:request).and_return(@response)
       Patron::Session.stub!(:new).and_return(@session)
     end
 
@@ -56,9 +59,13 @@ describe Brauchbar::Request do
         Brauchbar::Request.execute(:method => :get, :uri => 'http://www.google.com/')
       end
 
-      it 'should return a response object' do
-        res = Brauchbar::Request.execute(:method => :get, :uri => 'http://www.google.com/')
-        res.instance_of?(Brauchbar::Response).should be_true
+      it 'should create a response object from the Patron response' do
+        Brauchbar::Response.should_receive(:new).with(@response)
+        Brauchbar::Request.execute(:method => :get, :uri => 'http://www.google.com/')
+      end
+
+      it 'should return a brauchbar response object' do
+        Brauchbar::Request.execute(:method => :get, :uri => 'http://www.google.com/').should == @brauchbar_response
       end
     end
 

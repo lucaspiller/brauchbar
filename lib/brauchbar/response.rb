@@ -1,0 +1,3 @@
+class Brauchbar::Response
+
+end
