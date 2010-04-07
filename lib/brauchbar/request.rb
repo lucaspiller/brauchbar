@@ -1,5 +1,6 @@
 class Brauchbar::Request
   def self.execute(params = {})
+    # validation
     raise ArgumentError.new('Method option required') if params[:method].nil?
     raise ArgumentError.new('Unsupported Method') unless %w{ get }.include?(params[:method].to_s)
 
@@ -9,5 +10,14 @@ class Brauchbar::Request
     rescue URI::InvalidURIError => e
       raise ArgumentError.new('Invalid URI')
     end
+
+    # clear headers
+    params[:headers] ||= {}
+
+    # create request
+    session = Patron::Session.new
+
+    # make request
+    session.request(params[:method], params[:uri], params[:headers])
   end
 end
