@@ -21,13 +21,30 @@ brauchbar is built on top of the [patron](http://github.com/toland/patron) gem, 
 
 ## Usage
 
-### Basic Usage
+### Basic usage
 
     Brauchbar.get "http://www.google.co.uk/search?hl=en&q=brauchbar&meta=&esrch=FT1"
 
-### Headers
+### Headers can be added
 
-    Brauchbar.get "http://www.google.co.uk/search?hl=en&q=brauchbar&meta=&esrch=FT1", :headers => { 'Accept' => 'text/html', 'User-Agent' => 'brauchbar test 1.0' }
+    Brauchbar.get "http://www.google.co.uk/search?hl=en&q=brauchbar&meta=&esrch=FT1",
+                  :headers => { 'Accept' => 'text/html', 'User-Agent' => 'brauchbar test 1.0' }
+
+### A Response object is returned
+
+    res = Brauchbar.get "http://www.google.co.uk/search?hl=en&q=brauchbar&meta=&esrch=FT1"
+
+    # response body
+    # <html><head>.....</html>
+    puts res
+
+    # headers
+    # { 'Content-Type' => 'text/html' }
+    puts res.headers
+
+    # http status
+    # 200
+    puts res.status
 
 ## Hacking
 

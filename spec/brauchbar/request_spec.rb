@@ -60,6 +60,9 @@ describe Brauchbar::Request do
       end
 
       it 'should create a response object from the Patron response' do
+        # rspec doesn't seem to like stub and should receive together,
+        # called rspec_reset to clear the stub solves it
+        Brauchbar::Response.rspec_reset
         Brauchbar::Response.should_receive(:new).with(@response)
         Brauchbar::Request.execute(:method => :get, :uri => 'http://www.google.com/')
       end
