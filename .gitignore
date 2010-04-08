@@ -1,2 +1,4 @@
 .DS*
 .bundle/
+pkg
+rdoc
