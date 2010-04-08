@@ -13,7 +13,10 @@ The majority of other clients are built on top off Net::HTTP. This is the HTTP l
 
 ### So, this is special how?
 
-brauchbar is built on top of the [patron](http://github.com/toland/patron) gem, which itself is based upon libcurl. In other words, it has history. History is good. The brauchbar interface is based upon a number of other good, it is designed to be simple and easy to integrate.
+brauchbar is built on top of the [patron](http://github.com/toland/patron) gem, which itself is based upon libcurl. In other words, it has history. History is good.
+The brauchbar API is based upon a number of other good HTTP clients and is designed to be simple and easy to integrate to your application.
+
+brauchbar doesn't introduce anything new into the world of HTTP clients, however it brings the best parts of all of them into one place, which is accessible by a simple, future-proof API.
 
 ## Install
 
@@ -54,6 +57,8 @@ Feel free to hack away at this, however I won't merge anything unless you have a
 
 * POST requests with POST data
 * Remembering of cookies between requests
+* Changing of timeouts
+* HTTP authentication
 
 ## Contributors
 
